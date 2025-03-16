@@ -8,6 +8,7 @@ import {
   Text,
   View,
 } from "react-native";
+import MealDetails from "./MealDetails";
 
 const MealItem = ({ item }) => {
   const { imageUrl, title, duration, complexity, affordability, id } = item;
@@ -37,11 +38,11 @@ const MealItem = ({ item }) => {
             />
             <Text style={styles.title}>{title}</Text>
           </View>
-          <View style={styles.details}>
-            <Text style={styles.detailItem}>{duration} mins</Text>
-            <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
-            <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
-          </View>
+          <MealDetails
+            duration={duration}
+            complexity={complexity}
+            affordability={affordability}
+          />
         </View>
       </Pressable>
     </View>
@@ -69,16 +70,7 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
   },
-  details: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    padding: 8,
-  },
-  detailItem: {
-    marginHorizontal: 4,
-    fontSize: 12,
-  },
+
   innerContainer: {
     borderRadius: 8,
     overflow: "hidden",
