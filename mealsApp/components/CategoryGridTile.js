@@ -2,6 +2,7 @@ import React from "react";
 import { Platform, Pressable, StyleSheet, Text, View } from "react-native";
 
 const CategoryGridTile = ({ category, onPress }) => {
+  // const navigation = useNavigation();
   return (
     <View style={[styles.gridItem, { backgroundColor: category.color }]}>
       <Pressable

@@ -6,7 +6,10 @@ import { CATEGORIES } from "../data/dummy-data";
 const CategoriesScreen = ({ navigation }) => {
   const renderCategoryItem = (item) => {
     const onPressCategoryItem = () => {
-      navigation.navigate("MealsOverview");
+      console.log("item", item?.item?.id);
+      navigation.navigate("MealsOverview", {
+        categoryId: item?.item?.id,
+      });
     };
     return (
       <CategoryGridTile category={item?.item} onPress={onPressCategoryItem} />
