@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   Image,
@@ -9,11 +10,20 @@ import {
 } from "react-native";
 
 const MealItem = ({ item }) => {
-  console.log("item", item);
-  const { imageUrl, title, duration, complexity, affordability } = item;
+  const { imageUrl, title, duration, complexity, affordability, id } = item;
+  const navigation = useNavigation();
+
+  const onPressMealItem = () => {
+    console.log("itemData", item);
+    navigation.navigate("MealDetails", {
+      mealId: id,
+    });
+  };
+
   return (
     <View style={styles.mealItem}>
       <Pressable
+        onPress={onPressMealItem}
         style={({ pressed }) => (pressed ? styles.buttonPressed : null)}
         android_ripple={{ color: "#ccc" }}
       >
