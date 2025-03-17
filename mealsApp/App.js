@@ -42,7 +42,13 @@ export default function App() {
             //   };
             // }}
           />
-          <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
+          <Stack.Screen
+            name="MealDetails"
+            component={MealDetailsScreen}
+            // options={{
+            //   headerRight: () => <Button title="Tap Me" onPress={}/>,
+            // }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="light" />
